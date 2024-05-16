@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:get/get.dart';
 
 import '../../barrels/utils.dart';
@@ -20,6 +21,12 @@ class ThemeController extends GetxController {
 
     _myPref.saveTheme(isDarkMode);
     _updateAppTheme(isDarkMode);
+  }
+
+  void toggleTheme() {
+
+    var brightness = SchedulerBinding.instance.window.platformBrightness;
+    changeTheme(brightness == Brightness.dark);
   }
 
   void _updateAppTheme(bool isDarkMode) {
