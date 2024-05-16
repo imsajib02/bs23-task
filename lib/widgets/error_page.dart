@@ -26,7 +26,7 @@ class ErrorPage extends StatelessWidget {
               width: 200,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.blue.shade50,
+                color: context.isDarkMode ? Colors.grey : Colors.blue.shade50,
                 image: DecorationImage(
                   image: AssetImage('assets/images/robot_oops.png')
                 ),
