@@ -26,8 +26,8 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
 
-  final localizationController = Get.put(LocalizationController());
-  final themeController = Get.put(ThemeController());
+  final _localizationController = Get.put(LocalizationController());
+  final _themeController = Get.put(ThemeController());
 
   MyApp({Key? key}) : super(key: key);
 
@@ -39,10 +39,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: themeController.themeMode.value,
+      themeMode: _themeController.themeMode.value,
       defaultTransition: Transition.native,
       translations: AppLocalization(),
-      locale: localizationController.appLocale.value,
+      locale: _localizationController.appLocale.value,
       fallbackLocale: getLocale(ENGLISH),
       home: Home(),
     ));
