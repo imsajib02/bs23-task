@@ -18,8 +18,18 @@ class LocalizationController extends GetxController {
   void getAppLocale() {
 
     String languageCode = _myPref.getLanguageCode();
-    appLocale.value = getLocale(languageCode);
+    _updateLocale(getLocale(languageCode));
+  }
 
+  void changeAppLocale(Locale locale) {
+
+    _myPref.saveLanguageCode(locale.languageCode);
+    _updateLocale(locale);
+  }
+
+  void _updateLocale(Locale locale) {
+
+    appLocale.value = locale;
     Get.updateLocale(appLocale.value!);
   }
 }
