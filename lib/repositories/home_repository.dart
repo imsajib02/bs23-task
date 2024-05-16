@@ -32,8 +32,6 @@ class HomeRepository {
         headers: {'Accept' : 'application/json'},
       ).timeout(Duration(seconds: timeoutSeconds));
 
-      print(response.body);
-
       client.close();
       return response;
 
