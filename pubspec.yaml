@@ -71,8 +71,6 @@ flutter:
     - assets/images/
     - .env.development
     - .env.production
-    - lib/localization/languages/bn.json
-    - lib/localization/languages/en.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
