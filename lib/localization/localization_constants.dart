@@ -25,3 +25,10 @@ Locale getLocale(String languageCode) {
 }
 
 const STR_APP_NAME = 'app_name';
+const STR_OOPS = 'oops';
+const STR_DATA_FAILURE = 'data_failure';
+const STR_TRY_AGAIN = 'try_again';
+const STR_NO_INTERNET = 'no_internet';
+const STR_INACTIVE_CONNECTION = 'inactive_connection';
+const STR_TIMED_OUT = 'timed_out';
+const STR_UNKNOWN_ERROR = 'unknown_error';
