@@ -1,54 +1,15 @@
-import 'dart:convert';
+import 'package:get/get.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import '../barrels/utils.dart';
-
-class AppLocalization {
-
-  final Locale locale;
-
-  AppLocalization(this.locale);
-
-  static AppLocalization? of(BuildContext context) {
-    return Localizations.of<AppLocalization>(context, AppLocalization);
-  }
-
-  Map<String, String>? _localizedValues;
-
-  Future load() async {
-
-    String jsonStringValues = await rootBundle.loadString("lib/localization/languages/${locale.languageCode}.json");
-    Map<String, dynamic> mappedJson = json.decode(jsonStringValues);
-    _localizedValues = mappedJson.map((key, value) => MapEntry(key, value.toString()));
-  }
-
-
-  String? getTranslatedValue(String key) {
-    return _localizedValues![key];
-  }
-
-  static const LocalizationsDelegate<AppLocalization> delegate = _AppLocalizationDelegate();
-}
-
-
-class _AppLocalizationDelegate extends LocalizationsDelegate<AppLocalization> {
-
-  const _AppLocalizationDelegate();
+class AppLocalization extends Translations {
 
   @override
-  bool isSupported(Locale locale) {
-    return [ENGLISH, BANGLA].contains(locale.languageCode);
-  }
+  Map<String, Map<String, String>> get keys => {
 
-  @override
-  Future<AppLocalization> load(Locale locale) async {
-    AppLocalization localization = AppLocalization(locale);
-    await localization.load();
-    return localization;
-  }
-
-  @override
-  bool shouldReload(_AppLocalizationDelegate old) => false;
+    'en_US': {
+      'app_name': 'BS23 Task',
+    },
+    'bn_BD': {
+      'app_name': 'বিএস২৩ টাস্ক',
+    }
+  };
 }
