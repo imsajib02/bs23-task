@@ -6,9 +6,10 @@ import 'package:get/get.dart';
 import '../../../barrels/localizations.dart';
 import '../../../barrels/models.dart';
 import '../../../barrels/repositories.dart';
+import '../../../barrels/themes.dart';
 import '../../../barrels/utils.dart';
 
-class HomeController extends GetxController {
+class HomeController extends FullLifeCycleController with FullLifeCycleMixin {
 
   var index = 0.obs;
   var productList = <Product>[].obs;
@@ -18,6 +19,15 @@ class HomeController extends GetxController {
   void onInit() {
     getList();
     super.onInit();
+  }
+
+  @override
+  void didChangePlatformBrightness() {
+
+    final themeController = Get.find<ThemeController>();
+    themeController.toggleTheme();
+
+    super.didChangePlatformBrightness();
   }
 
   void retry() {
@@ -68,4 +78,16 @@ class HomeController extends GetxController {
     index.value = 2;
     Get.snackbar(message, '', snackPosition: SnackPosition.BOTTOM, colorText: Colors.white, backgroundColor: Colors.black, borderColor: Colors.white);
   }
+
+  @override
+  void onDetached() {}
+
+  @override
+  void onInactive() {}
+
+  @override
+  void onPaused() {}
+
+  @override
+  void onResumed() {}
 }
