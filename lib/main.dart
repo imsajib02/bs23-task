@@ -8,7 +8,7 @@ import 'package:get_storage/get_storage.dart';
 import 'barrels/localizations.dart';
 import 'barrels/themes.dart';
 import 'barrels/utils.dart';
-import 'home.dart';
+import 'route/routes.dart';
 
 Future<void> main() async {
 
@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
       translations: AppLocalization(),
       locale: _localizationController.appLocale.value,
       fallbackLocale: getLocale(ENGLISH),
-      home: Home(),
+      initialRoute: ROUTE_INITIAL,
+      getPages: appPages,
     ));
   }
 }
