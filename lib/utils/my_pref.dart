@@ -12,17 +12,11 @@ class MyPref {
   static const LANGUAGE = 'language';
   static const THEME = 'isDarkMode';
 
-  void saveLanguageCode(String languageCode) async {
-    _box.write(LANGUAGE, languageCode);
-  }
+  void saveLanguageCode(String languageCode) => _box.write(LANGUAGE, languageCode);
 
-  String getLanguageCode() {
-    return _box.read(LANGUAGE) ?? ENGLISH;
-  }
+  String getLanguageCode() => _box.read(LANGUAGE) ?? ENGLISH;
 
-  void saveTheme(bool isDarkMode) {
-    _box.write(THEME, isDarkMode);
-  }
+  void saveTheme(bool isDarkMode) => _box.write(THEME, isDarkMode);
 
   bool isDarkMode() {
     var brightness = SchedulerBinding.instance.window.platformBrightness;

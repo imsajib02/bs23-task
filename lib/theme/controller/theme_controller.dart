@@ -14,11 +14,7 @@ class ThemeController extends GetxController {
     super.onInit();
   }
 
-  void getTheme() {
-
-    bool isDarkMode = _myPref.isDarkMode();
-    _updateAppTheme(isDarkMode);
-  }
+  void getTheme() => _updateAppTheme(_myPref.isDarkMode());
 
   void changeTheme(bool isDarkMode) {
 
