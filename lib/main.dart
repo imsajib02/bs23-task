@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 
 import 'barrels/localizations.dart';
+import 'barrels/themes.dart';
 import 'barrels/utils.dart';
 import 'home.dart';
 
@@ -26,6 +27,7 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
 
   final localizationController = Get.put(LocalizationController());
+  final themeController = Get.put(ThemeController());
 
   MyApp({Key? key}) : super(key: key);
 
@@ -35,7 +37,9 @@ class MyApp extends StatelessWidget {
     return Obx(() => GetMaterialApp(
       title: dotenv.env['APP_TITLE']!,
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: themeController.themeMode.value,
       defaultTransition: Transition.native,
       translations: AppLocalization(),
       locale: localizationController.appLocale.value,
