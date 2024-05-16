@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextStyles {
 
@@ -19,7 +20,7 @@ class TextStyles {
   static TextStyle get errorStyle => TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: Colors.black.withOpacity(.75),
+    color: Get.isDarkMode ? Colors.grey.shade400 : Colors.black.withOpacity(.75),
   );
 
   static TextStyle get buttonTextStyle => TextStyle(
