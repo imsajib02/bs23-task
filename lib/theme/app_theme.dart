@@ -45,9 +45,9 @@ class AppTheme {
     colorScheme: ColorScheme.dark().copyWith(
       primary: kPrimaryColor,
       secondary: kAccentColor,
-      background: kBackgroundColorLight,
+      background: kBackgroundColorDark,
     ),
-    scaffoldBackgroundColor: kBackgroundColorLight,
+    scaffoldBackgroundColor: kBackgroundColorDark,
     textSelectionTheme: TextSelectionThemeData(
       cursorColor: kPrimaryColor,
     ),
