@@ -32,3 +32,7 @@ const STR_NO_INTERNET = 'no_internet';
 const STR_INACTIVE_CONNECTION = 'inactive_connection';
 const STR_TIMED_OUT = 'timed_out';
 const STR_UNKNOWN_ERROR = 'unknown_error';
+const STR_FLUTTER_REPOS = 'flutter_repos';
+const STR_NAME = 'name';
+const STR_STAR = 'star';
+const STR_OWNER = 'owner';

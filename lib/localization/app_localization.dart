@@ -14,6 +14,10 @@ class AppLocalization extends Translations {
       'inactive_connection': 'Internet connection not working!',
       'timed_out': 'Timed out!',
       'STR_UNKNOWN_ERROR': 'Something went wrong!',
+      'flutter_repos': 'Flutter Repositories',
+      'name': 'Name',
+      'star': 'Star',
+      'owner': 'Owner',
     },
     'bn_BD': {
       'app_name': 'বিএস২৩ টাস্ক',
@@ -24,6 +28,10 @@ class AppLocalization extends Translations {
       'inactive_connection': 'Internet connection not working!',
       'timed_out': 'Timed out!',
       'STR_UNKNOWN_ERROR': 'Something went wrong!',
+      'flutter_repos': 'Flutter Repositories',
+      'name': 'Name',
+      'star': 'Star',
+      'owner': 'Owner',
     }
   };
 }

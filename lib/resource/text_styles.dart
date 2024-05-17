@@ -8,7 +8,7 @@ class TextStyles {
   static TextStyle get appbarTitleStyle => TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
-    color: Colors.white,
+    color: Get.isDarkMode ? Colors.white : Colors.black,
   );
 
   static TextStyle get textFieldHintStyle => TextStyle(
@@ -27,5 +27,11 @@ class TextStyles {
     fontSize: 14,
     fontWeight: FontWeight.w500,
     color: Colors.white,
+  );
+
+  static TextStyle get cardTitleStyle => TextStyle(
+    fontSize: 11,
+    color: Colors.black.withOpacity(.85),
+    fontWeight: FontWeight.w500,
   );
 }

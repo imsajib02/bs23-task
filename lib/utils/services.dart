@@ -7,5 +7,5 @@ final getIt = GetIt.instance;
 
 void registerServices() {
   getIt.registerLazySingleton<MyPref>(() => MyPref());
-  getIt.registerLazySingleton<HomeRepository>(() => HomeRepository());
+  getIt.registerLazySingleton<GithubRepository>(() => GithubRepository());
 }
