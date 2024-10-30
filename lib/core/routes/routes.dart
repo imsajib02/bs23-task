@@ -10,14 +10,8 @@ class AppRoutes {
 
     GetPage(
       name: routeRepositories,
-      page: () => const Initial(),
-      binding: LocalizationBinding(),
-    ),
-
-    GetPage(
-      name: routeRepoDetails,
-      page: () => Login(),
-      binding: LoginBinding(),
+      page: () => const Repositories(),
+      binding: RepositoriesBinding(),
     ),
   ];
 
