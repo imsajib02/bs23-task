@@ -31,7 +31,7 @@ class RepoWidget extends StatelessWidget {
               _cardInfo(
                 imagePath: 'assets/images/name.png',
                 title: STR_NAME.tr,
-                value: repo.name!,
+                value: repo.name,
               ),
 
               5.h,
@@ -39,7 +39,7 @@ class RepoWidget extends StatelessWidget {
               _cardInfo(
                 imagePath: 'assets/images/programmer.png',
                 title: STR_STAR.tr,
-                value: repo.stargazersCount!.toString(),
+                value: repo.stars.toString(),
               ),
 
               5.h,
@@ -47,7 +47,7 @@ class RepoWidget extends StatelessWidget {
               _cardInfo(
                 imagePath: 'assets/images/star.png',
                 title: STR_OWNER.tr,
-                value: repo.owner!,
+                value: repo.owner,
               ),
             ],
           ),
