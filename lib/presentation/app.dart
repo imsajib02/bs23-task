@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       translations: AppLocalization(),
       locale: _localizationController.appLocale,
       fallbackLocale: localeEnglish,
-      initialRoute: routeInitial,
+      initialRoute: routeRepositories,
       getPages: injector<AppRoutes>().pages,
     );
   }
