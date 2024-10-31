@@ -1,16 +1,37 @@
-# task
+# Flutter Repository Explorer
 
-A new Flutter project.
+A Flutter app that presents a curated list of "Flutter" repositories, sorted by star count, with seamless pagination and detailed repository information.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Repository List:** Displays a list of Flutter repositories sorted by the number of stars.
+- **Pagination:** Automatically loads additional repositories in batches of 10 as you scroll down.
+- **Detail Page:** Each repository card links to a detail page showing:
+    - Owner information
+    - Detailed description
+    - Repository language
+    - Visibility
+    - Topics
+    - Open issue count
+    - Last update time
 
-A few resources to get you started if this is your first Flutter project:
+## Architecture
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This app is built using the Clean Architecture principles to ensure separation of concerns and maintainability. The project structure consists of:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Presentation Layer:** UI components and state management using GetX.
+- **Domain Layer:** Business logic and repository patterns.
+- **Data Layer:** Data sources, including API calls to fetch repository information.
+
+## Usage
+
+1. Launch the app to see the list of Flutter repositories sorted by star count.
+2. Scroll down to load more repositories automatically.
+3. Click on a repository card to view detailed information on the repository detail page.
+
+## State Management
+
+This application utilizes GetX for state management, providing reactive programming capabilities, dependency injection, and route management.
+
+## 
+Thank you for checking out the Flutter Repository Explorer! Enjoy exploring the world of Flutter repositories!
