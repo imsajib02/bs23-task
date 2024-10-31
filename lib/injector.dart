@@ -27,7 +27,6 @@ Future<void> registerDependencies() async {
     ..registerLazySingleton<ContentTypeInterceptor>(() => ContentTypeInterceptor())
     ..registerLazySingleton<LoggerInterceptor>(() => LoggerInterceptor())
     ..registerLazySingleton<ResponseInterceptor>(() => ResponseInterceptor())
-    ..registerLazySingleton<AuthorizationInterceptor>(() => AuthorizationInterceptor(injector()))
 
     // Network
     ..registerLazySingleton<NetworkInfo>(() => ConnectivityStatus())
