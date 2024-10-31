@@ -2,6 +2,10 @@
 
 A Flutter app that presents a curated list of "Flutter" repositories, sorted by star count, with seamless pagination and detailed repository information.
 
+<p>
+    <img src="https://github.com/imsajib02/flutter-repository-explorer/blob/main/screenshots/app_screen.gif?raw=true"/>
+</p>
+
 ## Features
 
 - **Repository List:** Displays a list of Flutter repositories sorted by the number of stars.
