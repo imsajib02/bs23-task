@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../../../../core/constants/route_constants.dart';
 import '../../../../core/extensions/sized_box_extension.dart';
 import '../../../components/cards/repo_card.dart';
 import '../../../components/others/error_page.dart';
@@ -54,7 +55,7 @@ class Repositories extends StatelessWidget {
 
                           return RepoCard(
                             repository: _controller.flutterRepoList[index],
-                            onClick: () {},
+                            onClick: (repository) => Get.toNamed(routeRepoDetails.replaceAll(':id', repository.id.toString()), arguments: repository),
                           );
                         },
                       ),
