@@ -10,7 +10,7 @@ class AppRoutes {
 
     GetPage(
       name: routeRepositories,
-      page: () => const Repositories(),
+      page: () => Repositories(),
       binding: RepositoriesBinding(),
     ),
   ];
