@@ -11,7 +11,7 @@ import '../../../core/extensions/date_time_extension.dart';
 class RepoCard extends StatelessWidget {
 
   final RepositoryEntity repository;
-  final Function() onClick;
+  final Function(RepositoryEntity) onClick;
 
   const RepoCard({Key? key, required this.repository, required this.onClick}) : super(key: key);
 
@@ -19,7 +19,7 @@ class RepoCard extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GestureDetector(
-      onTap: onClick,
+      onTap: () => onClick(repository),
       child: Card(
         color: white,
         child: Padding(

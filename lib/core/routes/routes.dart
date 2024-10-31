@@ -13,6 +13,11 @@ class AppRoutes {
       page: () => Repositories(),
       binding: RepositoriesBinding(),
     ),
+
+    GetPage(
+      name: routeRepoDetails,
+      page: () => RepositoryDetails(),
+    ),
   ];
 
   get pages => _pages;
