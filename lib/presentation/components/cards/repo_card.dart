@@ -1,107 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task/barrels/utils.dart';
 
-import '../barrels/localizations.dart';
-import '../barrels/models.dart';
-import '../barrels/resources.dart';
+import '../../../core/constants/colors_constants.dart';
+import '../../../core/constants/localization_constants.dart';
+import '../../../core/styles/text_styles.dart';
+import '../../../domain/entities/repository_entity.dart';
+import '../../../core/extensions/sized_box_extension.dart';
+import '../../../core/extensions/date_time_extension.dart';
 
-class RepoWidget extends StatelessWidget {
+class RepoCard extends StatelessWidget {
 
-  final GithubRepo repo;
-  final Function() onView;
+  final RepositoryEntity repository;
+  final Function() onClick;
 
-  const RepoWidget({Key? key, required this.repo, required this.onView}) : super(key: key);
+  const RepoCard({Key? key, required this.repository, required this.onClick}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
 
     return GestureDetector(
-      onTap: onView,
+      onTap: onClick,
       child: Card(
-        elevation: 1,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(3),
-        ),
-        child: Container(
-          padding: EdgeInsets.all(8),
+        color: white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              _cardInfo(
-                imagePath: 'assets/images/name.png',
-                title: STR_NAME.tr,
-                value: repo.name,
+              Text(repository.name!,
+                style: TextStyles.repoTitleStyle,
               ),
 
-              5.h,
+              4.h,
 
-              _cardInfo(
-                imagePath: 'assets/images/programmer.png',
-                title: STR_STAR.tr,
-                value: repo.stars.toString(),
+              Text(repository.owner!,
+                style: TextStyles.repoDescriptionStyle.copyWith(
+                  color: grey,
+                ),
               ),
 
-              5.h,
+              8.h,
 
-              _cardInfo(
-                imagePath: 'assets/images/star.png',
-                title: STR_OWNER.tr,
-                value: repo.owner,
+              Text(repository.description ?? strNoDescription.tr,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyles.repoDescriptionStyle,
+              ),
+
+              8.h,
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  Row(
+                    children: [
+
+                      const Icon(Icons.star, size: 16, color: amber),
+
+                      4.w,
+
+                      Text('${repository.stars}'),
+
+                      16.w,
+
+                      const Icon(Icons.call_split, size: 16),
+
+                      4.w,
+
+                      Text('${repository.forks}'),
+                    ],
+                  ),
+
+                  Text(repository.language ?? strNun.tr,
+                    style: TextStyles.repoDescriptionStyle.copyWith(
+                      color: primary,
+                    ),
+                  ),
+                ],
+              ),
+
+              8.h,
+
+              Text('${strLastUpdate.tr} ${DateTime.parse(repository.updatedAt!).toDateWithFullMonthString}',
+                style: TextStyles.repoUpdateAtStyle,
               ),
             ],
           ),
         ),
       ),
-    );
-  }
-
-  Widget _cardInfo({required String imagePath, required String title, required String value}) {
-
-    return Row(
-      children: [
-
-        Expanded(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              Image.asset(imagePath,
-                height: 16,
-                width: 16,
-                fit: BoxFit.contain,
-              ),
-
-              8.w,
-
-              Text(title + ' :',
-                style: TextStyles.cardTitleStyle,
-              ),
-            ],
-          ),
-        ),
-
-        10.w,
-
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-
-              Flexible(
-                child: Text(value,
-                  textAlign: TextAlign.right,
-                  style: TextStyles.cardTitleStyle.copyWith(
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
